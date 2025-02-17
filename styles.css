@@ -1,0 +1,148 @@
+/* Global Styles */
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    justify-content: center;
+    background: url('ancient-texture.jpg') no-repeat center center fixed, #3b2f2f;
+    background-blend-mode: multiply; /* Darkens the background for depth */
+    background-size: cover;
+    color: white;
+}
+
+/* Dark Overlay for Better Readability */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Slightly darkened overlay */
+    z-index: -1;
+}
+
+/* Header */
+header {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    text-align: center;
+    z-index: 2;
+    padding-top: 15px;
+}
+
+/* Title Styling */
+h1 {
+    font-family: 'Cinzel', serif;
+    font-size: 3rem;
+    letter-spacing: 2px;
+    color: rgb(214, 175, 98); /* Golden effect */
+    text-shadow: 3px 3px 7px black;
+}
+
+/* Content Container */
+#content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 80%;
+    max-width: 1200px;
+    margin-top: 100px;
+    background: rgba(43, 29, 19, 0.9); /* Dark brown with slight transparency */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(214, 175, 98, 0.5); /* Golden glow effect */
+}
+
+/* Story Image */
+#storyImage {
+    width: 50%;
+    max-height: 500px;
+    border-radius: 8px;
+    margin-right: 20px;
+    transition: opacity 1s ease-in-out;
+    border: 2px solid rgb(214, 175, 98); /* Ancient golden frame */
+}
+
+/* Story Text */
+#storyText {
+    width: 50%;
+    font-size: 1.5rem;
+    font-family: 'IM Fell Great Primer', serif;
+    color: rgb(214, 175, 98);
+    text-shadow: 2px 2px 5px black;
+    transition: opacity 1s ease-in-out;
+}
+
+/* Navigation Buttons */
+.nav-button {
+    position: fixed;
+    bottom: 20px;
+    width: 60px;
+    height: 60px;
+    background: url('spartan-shield.png') no-repeat center;
+    background-size: cover;
+    border: none;
+    cursor: pointer;
+}
+
+/* Left and Right Arrow Overlays */
+.left-button {
+    left: 40px;
+    background-image: url('asset/left\ arrow.jpeg'); /* Replace with actual arrow image */
+}
+
+.right-button {
+    right: 40px;
+    background-image: url('asset/right\ arrow.jpeg');
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    #content {
+        flex-direction: column;
+        width: 90%;
+    }
+    #storyImage {
+        width: 100%;
+        max-height: 300px;
+        margin-right: 0;
+    }
+    #storyText {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+/* 🔥 Fire Ember Effect */
+.embers-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.ember {
+    position: absolute;
+    background: rgba(255, 140, 0, 0.9);
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgba(255, 69, 0, 0.9);
+    opacity: 1;
+    animation: rise 3s linear, flicker 0.2s infinite alternate;
+}
+
+@keyframes rise {
+    from { transform: translateY(0) scale(1); opacity: 1; }
+    to { transform: translateY(-500px) scale(0.5); opacity: 0; }
+}
+
+@keyframes flicker {
+    from { opacity: 0.8; }
+    to { opacity: 0.4; }
+}
